@@ -53,7 +53,16 @@ int main(void) {
 
 		case 3:
 			if (flagPrecios) {
-				calcularCostosLatam(kilometros, precioAerolineas, precioLatam,
+				//LATAM
+				calcularCostos(kilometros, precioAerolineas,&tarjetaCreditoLatam, &tarjetaDebitoLatam,
+						&bitcoinLatam, &precioUnitarioKmLatam, &flagCostos);
+
+
+				calcularCostos (kilometros, precioAerolineas,
+						&flagCostos, &tarjetaCreditoAerolineas,
+						&tarjetaDebitoAerolineas, &bitcoinAerolineas,
+						&precioUnitarioKmAerolineas);
+			/*	calcularCostosLatam(kilometros, precioAerolineas, precioLatam,
 						&tarjetaCreditoLatam, &tarjetaDebitoLatam,
 						&bitcoinLatam, &precioUnitarioKmLatam,
 						&diferenciaPrecio);
@@ -62,7 +71,7 @@ int main(void) {
 				calcularCostosAerolineas(kilometros, precioAerolineas,
 						&flagCostos, &tarjetaCreditoAerolineas,
 						&tarjetaDebitoAerolineas, &bitcoinAerolineas,
-						&precioUnitarioKmAerolineas);
+						&precioUnitarioKmAerolineas);*/
 				printf(
 						"Los costos fueron calculados continue en la siguiente opcion");
 			} else {
@@ -114,7 +123,7 @@ int main(void) {
 			break;
 
 		case 6:
-			printf("Esta seguro que desea salir del programa? ('s' =  SI / 'n' = NO");
+			printf("Esta seguro que desea salir del programa? ('s' =  SI / 'n' = NO)");
 			fflush(stdin);
 			scanf ("%c", &salir);
 			break;
