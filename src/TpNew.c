@@ -42,12 +42,13 @@ int main(void) {
 				creditoAerolineas, bitcoinAerolineas, unitarioAerolineas,
 				diferencia)) {
 		case 1:
-			//
+			//si el usuario ya ingreso a la opcion 4 y reingresa la opcion 1 se restablecen las banderas
 			if (flagInformar) {
 				flagKilometros = 0;
 				flagPrecios = 0;
 				flagCostos = 0;
 				flagInformar = 0;
+				// si el usuario ya realizo los calculos pero desea reingresar los datos se restablecen las banderas
 			} else if (flagCostos) {
 				flagCostos = 0;
 			}
@@ -132,19 +133,18 @@ int main(void) {
 
 		case 5:
 			flagDiferencia = 1;
-			if (calcularCostos(kilometros = 7090, precioLatam = 159339, &creditoLatam,
-					&debitoLatam, &bitcoinLatam, &unitarioLatam,
+			if (calcularCostos(kilometros = 7090, precioLatam = 159339,
+					&creditoLatam, &debitoLatam, &bitcoinLatam, &unitarioLatam,
 					&flagDiferencia, &diferencia, &precioLatam,
 					&precioAerolineas) == 0) {
 				printf("Error al calcular los costos de Latam");
-			} else if (calcularCostos(kilometros = 7090, precioAerolineas = 162965,
-					&creditoAerolineas, &debitoAerolineas, &bitcoinAerolineas,
-					&unitarioAerolineas, &flagDiferencia, &diferencia,
-					&precioLatam, &precioAerolineas) == 0) {
+			} else if (calcularCostos(kilometros = 7090, precioAerolineas =
+					162965, &creditoAerolineas, &debitoAerolineas,
+					&bitcoinAerolineas, &unitarioAerolineas, &flagDiferencia,
+					&diferencia, &precioLatam, &precioAerolineas) == 0) {
 				printf("Error al calcular los costos de Aerolineas Argentinas");
 			} else {
-				printf(
-						" ** Los costos fueron calculados **");
+				printf(" ** Los costos fueron calculados **");
 			}
 			pausarConsola();
 			if (informarDatos(debitoLatam, creditoLatam, bitcoinLatam,

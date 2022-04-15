@@ -34,7 +34,6 @@ int menu(float kilometros, int *pFlagKilometros, int *pFlagPrecios,
 		float unitarioLatam, float debitoAerolineas, float creditoAerolineas,
 		float bitcoinAerolienas, float unitarioAerolineas, float diferencia);
 
-
 /**
  * @brief pide al usuario que ingrese los kilometros que va a viajar con todas las respectivas validaciones. 
  * 
@@ -43,7 +42,6 @@ int menu(float kilometros, int *pFlagKilometros, int *pFlagPrecios,
  * @return int entero que retorna si hubo algun error o no 0=Error 1=todoOk
  */
 int pedirKilometros(float *kilometros, int *pFlagKilometros);
-
 
 /**
  * @brief pide al usuario que ingrese los precios de los vuelos con sus respectivas validaciones
@@ -54,7 +52,6 @@ int pedirKilometros(float *kilometros, int *pFlagKilometros);
  * @return int entero que retorna si hubo algun error o no 0=Error 1=todoOk
  */
 int pedirPrecio(int *pFlagPrecio, float *aerolineas, float *latam);
-
 
 /**
  * @brief calcula los datos ingresados por el usuario y avisa si esto ocurrio a traves de sus respectivas validaciones
@@ -71,10 +68,9 @@ int pedirPrecio(int *pFlagPrecio, float *aerolineas, float *latam);
  * @param aerolineas flotante que guarda el valor del precio de los vuelos de Aerolineas Argentinas
  * @return int entero que retorna si hubo algun error o no 0=Error 1=todoOk
  */
-int calcularCostos(float kilometros, float precio,
-		float *credito, float *debito, float *bitcoin, float *unitario,
-		int*pFlagDiferencia,float* diferencia, float* latam, float* aerolineas);
-
+int calcularCostos(float kilometros, float precio, float *credito,
+		float *debito, float *bitcoin, float *unitario, int *pFlagDiferencia,
+		float *diferencia, float *latam, float *aerolineas);
 
 /**
  * @brief informa al usuario los precios calculados sobre los datos ingresados 
@@ -87,8 +83,8 @@ int calcularCostos(float kilometros, float precio,
  * @param pFlagNombre bandera que determina si ya se informo los datos de Latam 1=no 0=si
  * @return int 
  */
-int informarDatos(float debito, float credito, float bitcoin, float unitario, float diferencia,
-		int *pFlagNombre);
+int informarDatos(float debito, float credito, float bitcoin, float unitario,
+		float diferencia, int *pFlagNombre);
 /**
  * @brief pausa la consola
  * 

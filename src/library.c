@@ -27,7 +27,7 @@ int menu(float kilometros, int *pFlagKilometros, int *pFlagPrecios,
 
 	//2
 	if (*pFlagPrecios == 0) {
-		printf(" \n 2)Ingresar el precio de los vuelos: Sin datos \n");
+		printf(" 2)Ingresar el precio de los vuelos: Sin datos \n");
 
 	} else {
 		printf(
@@ -91,7 +91,8 @@ int pedirKilometros(float *kilometros, int *pFlagKilometros) {
 			scanf("%f", kilometros);
 		}
 		*pFlagKilometros = 1;
-		printf("** La cantidad de kilometros a viajar es: %.2f **\n", *kilometros);
+		printf("** La cantidad de kilometros a viajar es: %.2f **\n",
+				*kilometros);
 		todoOk = 1;
 	} else {
 		return todoOk;
@@ -118,7 +119,8 @@ int pedirPrecio(int *pFlagPrecio, float *aerolineas, float *latam) {
 		}
 		*pFlagPrecio = 1;
 		todoOk = 1;
-		printf("\n** El precio del vuelo de aerolineas es: %.2f **", *aerolineas);
+		printf("\n** El precio del vuelo de aerolineas es: %.2f **",
+				*aerolineas);
 		printf("\n** El precio del vuelo de Latam es: %.2f **", *latam);
 	} else {
 		return todoOk;
@@ -142,7 +144,8 @@ int calcularCostos(float kilometros, float precio, float *credito,
 		*debito = (float) precio * 0.9;
 		*bitcoin = (float) precio / 4606954.55;
 		*unitario = (float) precio / kilometros;
-		if (*pFlagDiferencia) {*diferencia = *latam - *aerolineas;
+		if (*pFlagDiferencia) {
+			*diferencia = *latam - *aerolineas;
 		} else {
 			return todoOk;
 		}
